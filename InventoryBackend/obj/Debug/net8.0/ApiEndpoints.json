@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "createAccProcess",
+    "RelativePath": "createAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createAccRequest",
+        "Type": "InventoryBackend.Contract.Inventory.loginRequestInput",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "logInProcess",
+    "RelativePath": "logIn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inputValue",
+        "Type": "InventoryBackend.Contract.Inventory.loginRequestInput",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

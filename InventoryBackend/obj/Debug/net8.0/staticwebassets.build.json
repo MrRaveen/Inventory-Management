@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "DatokU6snwm5aQQUaUjhchbLvNUIGRMeCXG9hkCNsCE=",
+  "Source": "InventoryBackend",
+  "BasePath": "_content/InventoryBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

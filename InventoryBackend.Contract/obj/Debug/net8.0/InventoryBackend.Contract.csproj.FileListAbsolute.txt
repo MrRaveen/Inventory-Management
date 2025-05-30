@@ -1,0 +1,11 @@
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\bin\Debug\net8.0\InventoryBackend.Contract.deps.json
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\bin\Debug\net8.0\InventoryBackend.Contract.dll
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\bin\Debug\net8.0\InventoryBackend.Contract.pdb
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.AssemblyInfoInputs.cache
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.AssemblyInfo.cs
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.csproj.CoreCompileInputs.cache
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.dll
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\refint\InventoryBackend.Contract.dll
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.pdb
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\ref\InventoryBackend.Contract.dll
