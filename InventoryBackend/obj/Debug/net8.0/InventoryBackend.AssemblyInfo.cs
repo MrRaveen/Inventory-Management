@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d074b27c-206b-4285-a09b-c6774ec8fef6")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventoryBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea3f8b28278f97b8cae431958b1b48907fe8e9ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4a6b63ec8ef8a407a6bd7b15aaf1e5302a4ed7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventoryBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventoryBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

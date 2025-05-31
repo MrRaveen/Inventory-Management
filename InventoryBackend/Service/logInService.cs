@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace InventoryBackend.Service
 {
-    public class logInService
+    public class logInService(userAccountContext _userAccountContext, tokenProvider provider)
     {
-        private readonly userAccountContext _userAccountContext;
-        public logInService(userAccountContext userAccountContext)
-        {
-            _userAccountContext = userAccountContext;
-        }
-        public async Task<bool> IsLoggedIn(userAccounts passingCredentials)
+        public async Task<string> IsLoggedIn(userAccounts passingCredentials)
         {
             //async Task<ActionResult<IEnumerable<userAccounts>>>
             //await _userAccountContext.userAccounts.ToListAsync()
@@ -24,7 +19,7 @@ namespace InventoryBackend.Service
                 List<userAccounts> result = await _userAccountContext.userAccounts.Where(p => p.userName == passingCredentials.userName).ToListAsync();
                 if (result.IsNullOrEmpty())
                 {
-                    return false;
+                    return "false";
                 }
                 else
                 {
@@ -32,14 +27,16 @@ namespace InventoryBackend.Service
                     {
                         if (item.password == passingCredentials.password)
                         {
-                            return true;
+                            string token = provider.Create(item);
+                            Debug.WriteLine(token);//HACK TEST
+                            return token;
                         }
                         else
                         {
-                            return false;
+                            return "false";
                         }
                     }
-                    return false;
+                    return "false";
                 }
             }catch (Exception ex)
             {
