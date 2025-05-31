@@ -46,13 +46,34 @@ namespace InventoryBackend.Controllers
         [HttpPost("/createAccount")]
         public async Task<string> createAccProcess(loginRequestInput createAccRequest)
         {
-            userAccounts convertedInfo = new userAccounts();
-            convertedInfo.userName = createAccRequest.UserName;
-            convertedInfo.password = createAccRequest.Password;
+            try
+            {
+                userAccounts convertedInfo = new userAccounts();
+                convertedInfo.userName = createAccRequest.UserName;
+                convertedInfo.password = createAccRequest.Password;
 
-            createAccService createObj = new createAccService(_userAccountContext);
-            userAccounts createdResult = createObj.createProcess(convertedInfo);
-            return "Passed";
+                createAccService createObj = new createAccService(_userAccountContext);
+                userAccounts createdResult = await createObj.createProcessAsync(convertedInfo);
+
+                if(createdResult == null)
+                {
+                    return "Account did not created. Try again";
+                }
+                else
+                {
+                    return "Account created";
+                }
+            }
+            catch (ArgumentException e1)
+            {
+                Debug.WriteLine(e1.ToString());
+                return e1.ToString();
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+                return e.ToString();
+            }
         }
     }
 }

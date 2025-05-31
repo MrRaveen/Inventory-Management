@@ -11,16 +11,12 @@
       "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\service\\createaccservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7AB9149A-B8E1-45A1-9DA1-3170690E5EEC}|InventoryBackend.Contract\\InventoryBackend.Contract.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend.contract\\inventory\\loginrequestinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7AB9149A-B8E1-45A1-9DA1-3170690E5EEC}|InventoryBackend.Contract\\InventoryBackend.Contract.csproj|solutionrelative:inventorybackend.contract\\inventory\\loginrequestinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\service\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\service\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\models\\useraccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\models\\useraccounts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\service\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\service\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,9 +38,9 @@
               "Title": "createAccService.cs",
               "DocumentMoniker": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Service\\createAccService.cs",
               "RelativeDocumentMoniker": "InventoryBackend\\Service\\createAccService.cs",
-              "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Service\\createAccService.cs*",
-              "RelativeToolTip": "InventoryBackend\\Service\\createAccService.cs*",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAAnAAAAAAAAAA==",
+              "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Service\\createAccService.cs",
+              "RelativeToolTip": "InventoryBackend\\Service\\createAccService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T15:19:39.037Z",
               "EditorCaption": ""
@@ -55,9 +51,9 @@
               "Title": "AccessPoint.cs",
               "DocumentMoniker": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Controllers\\AccessPoint.cs",
               "RelativeDocumentMoniker": "InventoryBackend\\Controllers\\AccessPoint.cs",
-              "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Controllers\\AccessPoint.cs*",
-              "RelativeToolTip": "InventoryBackend\\Controllers\\AccessPoint.cs*",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowDUAAABQAAAAAAAAAA==",
+              "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Controllers\\AccessPoint.cs",
+              "RelativeToolTip": "InventoryBackend\\Controllers\\AccessPoint.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T15:18:45.687Z",
               "EditorCaption": ""
@@ -65,25 +61,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "loginRequestInput.cs",
-              "DocumentMoniker": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend.Contract\\Inventory\\loginRequestInput.cs",
-              "RelativeDocumentMoniker": "InventoryBackend.Contract\\Inventory\\loginRequestInput.cs",
-              "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend.Contract\\Inventory\\loginRequestInput.cs",
-              "RelativeToolTip": "InventoryBackend.Contract\\Inventory\\loginRequestInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T15:18:40.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "logInService.cs",
               "DocumentMoniker": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Service\\logInService.cs",
               "RelativeDocumentMoniker": "InventoryBackend\\Service\\logInService.cs",
               "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Service\\logInService.cs",
               "RelativeToolTip": "InventoryBackend\\Service\\logInService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T10:35:07.122Z",
               "EditorCaption": ""
@@ -98,8 +81,7 @@
               "RelativeToolTip": "InventoryBackend\\Models\\userAccounts.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T09:18:05.083Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T09:18:05.083Z"
             }
           ]
         }
