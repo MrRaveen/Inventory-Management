@@ -27,6 +27,58 @@
   },
   {
     "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "createProcess",
+    "RelativePath": "createFolder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "folderRequest",
+        "Type": "InventoryBackend.Contract.Inventory.createFolderRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "createInventoryProcess",
+    "RelativePath": "createInventory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "inventoryData",
+        "Type": "InventoryBackend.Contract.Inventory.createInventoryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
     "Method": "logInProcess",
     "RelativePath": "logIn",
     "HttpMethod": "POST",

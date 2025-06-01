@@ -1,15 +1,34 @@
 using InventoryBackend.Context;
 using InventoryBackend.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-//register the table contexts
+//register the table contexts(userAccount)
 builder.Services.AddDbContext<userAccountContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AzureSqlConnection")));
+//register the table cotexts (folders)
+builder.Services.AddDbContext<foldersContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AzureSqlConnection")));
+//register the cosmos client (DI)
+builder.Services.AddSingleton<CosmosClient>(sp =>
+    new CosmosClient(
+        builder.Configuration["azurecosmos:uri"],
+        builder.Configuration["azurecosmos:accKey"]
+    )
+);
+//register the createInventory service
+builder.Services.AddSingleton<createInventory>(obj =>
+{
+    var client = obj.GetRequiredService<CosmosClient>();
+    var configObj = obj.GetRequiredService<IConfiguration>();
+    return new createInventory(client,configObj);
+});
+
 /*
  builder.Services.AddDbContext<userAccountContext>
  --Registers AppDbContext with dependency injection (DI) in the application.
@@ -22,6 +41,8 @@ builder.Services.AddDbContext<userAccountContext>(options =>
  builder.Configuration.GetConnectionString("AzureSqlConnection"))
   --Retrieves the connection string named "AzureSqlConnection" from the appsettings.json file.
  */
+
+
 builder.Services.AddSingleton<tokenProvider>();
 // Add services to the container.
 builder.Services.AddControllers();
@@ -53,13 +74,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Correct order:
 app.UseHttpsRedirection();
-
+//securing endpoints
+app.UseAuthentication();  // Must come first
 app.UseAuthorization();
-
+// securing endpoints
 app.MapControllers();
-
-//secure endpoints
-app.UseAuthentication();
-app.UseAuthorization();
 app.Run();

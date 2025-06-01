@@ -9,3 +9,4 @@ D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBacken
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\refint\InventoryBackend.Contract.dll
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.pdb
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\ref\InventoryBackend.Contract.dll
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend.Contract\obj\Debug\net8.0\InventoryBackend.Contract.sourcelink.json
