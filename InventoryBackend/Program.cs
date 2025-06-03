@@ -8,6 +8,7 @@ using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
 //register the table contexts(userAccount)
 builder.Services.AddDbContext<userAccountContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AzureSqlConnection")));
@@ -26,21 +27,35 @@ builder.Services.AddSingleton<createInventory>(obj =>
 {
     var client = obj.GetRequiredService<CosmosClient>();
     var configObj = obj.GetRequiredService<IConfiguration>();
-    return new createInventory(client,configObj);
+    return new createInventory(client, configObj);
 });
-
+//register the updateInventory service
+builder.Services.AddSingleton<updateInventoryService>(obj =>
+{
+    var client = obj.GetRequiredService<CosmosClient>();
+    var configObj = obj.GetRequiredService<IConfiguration>();
+    return new updateInventoryService(client, configObj);
+});
+//register the removenventory service
+builder.Services.AddSingleton<removeInventory>(obj =>
+{
+    var client = obj.GetRequiredService<CosmosClient>();
+    var configObj = obj.GetRequiredService<IConfiguration>();
+    return new removeInventory(client, configObj);
+});
 /*
  builder.Services.AddDbContext<userAccountContext>
  --Registers AppDbContext with dependency injection (DI) in the application.
  --Allows controllers and services to request AppDbContext without manually instantiating it.
- 
+
 (options =>
     options.UseSqlServer(...);
  --Configures AppDbContext to use SQL Server as the database provider. Uses the UseSqlServer method from Microsoft.EntityFrameworkCore.SqlServer
- 
+
  builder.Configuration.GetConnectionString("AzureSqlConnection"))
   --Retrieves the connection string named "AzureSqlConnection" from the appsettings.json file.
  */
+
 
 
 builder.Services.AddSingleton<tokenProvider>();

@@ -18,39 +18,50 @@ namespace InventoryBackend.Controllers
         private readonly userAccountContext _userAccountContext;
         private tokenProvider provider;
         private foldersContext _folderContext;
-        private createInventory createInventoryObj;
-        public AccessPoint(userAccountContext userAccountContext, tokenProvider provider, foldersContext folderContext, createInventory createInventoryObj)
+        private createInventory createInventoryObj;//create inventory
+        private updateInventoryService updateInventoryObj;//update inventory
+        private removeInventory removeInventoryObj;//remove inventory
+        public AccessPoint(userAccountContext userAccountContext, tokenProvider provider, foldersContext folderContext, createInventory createInventoryObj, updateInventoryService updateInventoryObj, removeInventory removeInventoryObj)
         {
             _userAccountContext = userAccountContext;
             this.provider = provider;
             _folderContext = folderContext;
             this.createInventoryObj = createInventoryObj;
+            this.updateInventoryObj = updateInventoryObj;
+            this.removeInventoryObj = removeInventoryObj;
         }
 
         [HttpPost("/logIn")]
         public async Task<string> logInProcess(loginRequestInput inputValue)
         {
-            try
+            string result = "";
+            for(int count = 0;count < 4; count++)
             {
-                userAccounts credentials = new userAccounts();
-                credentials.userName = inputValue.UserName;
-                credentials.password = inputValue.Password;
-                logInService service1 = new logInService(_userAccountContext,provider);
-                string v = await service1.IsLoggedIn(credentials);
-                if(v == "false")
+                try
                 {
-                    return "Invalid username or password";
+                    userAccounts credentials = new userAccounts();
+                    credentials.userName = inputValue.UserName;
+                    credentials.password = inputValue.Password;
+                    logInService service1 = new logInService(_userAccountContext, provider);
+                    string v = await service1.IsLoggedIn(credentials);
+                    if (v == "false")
+                    {
+                        result = "Invalid username or password";
+                    }
+                    else
+                    {
+                        result = v;
+                    }
+                    break;
                 }
-                else
+                catch (Exception ex)
                 {
-                    return v;
+                    Console.WriteLine("Error occured in the controller : " + ex.ToString());
+                    //throw new Exception("Error occured in the controller : " + ex.ToString());
+                    result = ex.ToString();
                 }
             }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Error occured in the controller : " + ex.ToString());
-                throw new Exception("Error occured in the controller : " + ex.ToString());
-            }
+            return result;
         }
         [HttpPost("/createAccount")]
         public async Task<string> createAccProcess(loginRequestInput createAccRequest)
@@ -112,7 +123,7 @@ namespace InventoryBackend.Controllers
         }
         //TODO FOLDER UPDATE
         //TODO FOLDER REMOVE
-        //TODO FOLDER GET ALL
+        //TODO FOLDER GET ALL(userID)
 
         [HttpPost("/createInventory")]
         [Authorize]
@@ -144,9 +155,44 @@ namespace InventoryBackend.Controllers
         //update inventory by id
         [HttpPut("/updateInventory")]
         [Authorize]
-        public string updateByFolderID(int folderID)
+        public async Task<string> updateByInventoryID(updateinventoryRequest request)
         {
-            return "";
+            try
+            {
+                inventory updateObj = new inventory();
+                updateObj.id = request.InventoryID;
+                updateObj.name = request.NameInventory;
+                updateObj.description = request.DescriptionInventory;
+                updateObj.amount = request.Amount;
+                updateObj.folderID = request.FolderID;
+                string updateResult = await updateInventoryObj.updateProcessAsync(updateObj);
+                return updateResult;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error occured when updating data (controller) : " + ex.ToString());
+            }
+        }
+        [HttpDelete("/removeInventory/{inventoryID}")]
+        [Authorize]
+        public async Task<string> removeInventoryByID(string inventoryID)
+        {
+            try
+            {
+                string result = await removeInventoryObj.removeProcess(inventoryID);
+                return result;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Error occured when removing inventory (controller) : " + ex.ToString());
+            }
+        }
+        //get all the inventory 
+        [HttpGet("/getAllInventory/{folderID}")]
+        [Authorize]
+        public async Task<inventory>getInventoryByFolderID(int folderID)
+        {
+            return null;
         }
     }
 }
