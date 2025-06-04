@@ -79,6 +79,58 @@
   },
   {
     "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "getInventoryByFolderID",
+    "RelativePath": "getAllInventory/{folderID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "folderID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[InventoryBackend.Models.inventory, InventoryBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "getFoldersByUserID",
+    "RelativePath": "getFoldersByUser/{userID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[InventoryBackend.Models.folders, InventoryBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
     "Method": "logInProcess",
     "RelativePath": "logIn",
     "HttpMethod": "POST",
@@ -105,6 +157,32 @@
   },
   {
     "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "removeFolderByID",
+    "RelativePath": "removeFolder/{folderID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "folderID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
     "Method": "removeInventoryByID",
     "RelativePath": "removeInventory/{inventoryID}",
     "HttpMethod": "DELETE",
@@ -114,6 +192,32 @@
       {
         "Name": "inventoryID",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "InventoryBackend.Controllers.AccessPoint",
+    "Method": "updateProcess",
+    "RelativePath": "updateFolder",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateRequest",
+        "Type": "InventoryBackend.Contract.Inventory.folderUpdateRequest",
         "IsRequired": true
       }
     ],

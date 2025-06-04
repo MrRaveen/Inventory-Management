@@ -21,14 +21,16 @@ namespace InventoryBackend.Controllers
         private createInventory createInventoryObj;//create inventory
         private updateInventoryService updateInventoryObj;//update inventory
         private removeInventory removeInventoryObj;//remove inventory
-        public AccessPoint(userAccountContext userAccountContext, tokenProvider provider, foldersContext folderContext, createInventory createInventoryObj, updateInventoryService updateInventoryObj, removeInventory removeInventoryObj)
+        private getInventoryFolderID getInventoryFolderIDObj;//get inventory
+        public AccessPoint(userAccountContext userAccountContext, tokenProvider provider, foldersContext folderContext, createInventory createInventoryObj, updateInventoryService updateInventoryObj, removeInventory removeInventoryObj, getInventoryFolderID getInventoryFolderIDObj)
         {
             _userAccountContext = userAccountContext;
             this.provider = provider;
             _folderContext = folderContext;
             this.createInventoryObj = createInventoryObj;
-            this.updateInventoryObj = updateInventoryObj;
             this.removeInventoryObj = removeInventoryObj;
+            this.getInventoryFolderIDObj = getInventoryFolderIDObj;
+        
         }
 
         [HttpPost("/logIn")]
@@ -121,10 +123,52 @@ namespace InventoryBackend.Controllers
                 throw new Exception("Error occured in the controller when saving folder : " + e.ToString());
             }
         }
-        //TODO FOLDER UPDATE
-        //TODO FOLDER REMOVE
-        //TODO FOLDER GET ALL(userID)
-
+        [HttpPut("/updateFolder")]
+        [Authorize]
+        public async Task<string> updateProcess(folderUpdateRequest updateRequest)
+        {
+            try
+            {
+                folders updateFolders = new folders();
+                updateFolders.folderID = updateRequest.folderID;
+                updateFolders.folderName = updateRequest.folderName;
+                updateFolders.descriptionFolder = updateRequest.descriptionFolder;
+                updateFolders.userID = updateRequest.userID;
+                folderUpdateService folderUpdateObj = new folderUpdateService(_folderContext);
+                string updateResult = await folderUpdateObj.folderUpdateProcess(updateFolders);
+                return updateResult;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Error occured when updating folder (controller) : " + ex.ToString());
+            }
+        }
+        [HttpDelete("/removeFolder/{folderID}")]
+        [Authorize]
+        public async Task<string> removeFolderByID(int folderID)
+        {
+            try
+            {
+                folderRemoveService removeObj = new folderRemoveService(_folderContext);
+                return await removeObj.removeFolderProcess(folderID);
+            }catch(Exception e)
+            {
+                throw new Exception("Error occured when removing the folder (controller) : " + e.ToString());
+            }
+        }
+        [HttpGet("/getFoldersByUser/{userID}")]
+        [Authorize]
+        public async Task<List<folders>> getFoldersByUserID(int userID)
+        {
+            try
+            {
+                getFolderService getObj = new getFolderService(_folderContext);
+                return await getObj.getFolderProcess(userID);
+            }catch(Exception e)
+            {
+                throw new Exception("Error occured when selecting folders (controller) : " + e.ToString());
+            }
+        }
         [HttpPost("/createInventory")]
         [Authorize]
         public async Task<string> createInventoryProcess(createInventoryRequest inventoryData)
@@ -190,9 +234,16 @@ namespace InventoryBackend.Controllers
         //get all the inventory 
         [HttpGet("/getAllInventory/{folderID}")]
         [Authorize]
-        public async Task<inventory>getInventoryByFolderID(int folderID)
+        public async Task<List<inventory>> getInventoryByFolderID(int folderID)
         {
-            return null;
+            try
+            {
+                List<inventory> inventoryList = await getInventoryFolderIDObj.getProcess(folderID);
+                return inventoryList;
+            }catch(Exception ex)
+            {
+                throw new Exception("Error occured when getting inventory (controller) : " + ex.ToString());
+            }
         }
     }
 }

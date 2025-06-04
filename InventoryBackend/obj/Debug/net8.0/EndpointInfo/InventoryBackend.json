@@ -149,6 +149,143 @@
         }
       }
     },
+    "/updateFolder": {
+      "put": {
+        "tags": [
+          "AccessPoint"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/folderUpdateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/folderUpdateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/folderUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/removeFolder/{folderID}": {
+      "delete": {
+        "tags": [
+          "AccessPoint"
+        ],
+        "parameters": [
+          {
+            "name": "folderID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getFoldersByUser/{userID}": {
+      "get": {
+        "tags": [
+          "AccessPoint"
+        ],
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/folders"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/folders"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/folders"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/createInventory": {
       "post": {
         "tags": [
@@ -283,6 +420,55 @@
           }
         }
       }
+    },
+    "/getAllInventory/{folderID}": {
+      "get": {
+        "tags": [
+          "AccessPoint"
+        ],
+        "parameters": [
+          {
+            "name": "folderID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/inventory"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/inventory"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/inventory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -327,6 +513,92 @@
         },
         "additionalProperties": false
       },
+      "folderUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "folderID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "folderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "descriptionFolder": {
+            "type": "string",
+            "nullable": true
+          },
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "folders": {
+        "type": "object",
+        "properties": {
+          "folderID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "folderName": {
+            "type": "string",
+            "nullable": true
+          },
+          "descriptionFolder": {
+            "type": "string",
+            "nullable": true
+          },
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userAccounts": {
+            "$ref": "#/components/schemas/userAccounts"
+          }
+        },
+        "additionalProperties": false
+      },
+      "inventory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "folderID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "inventoryObj": {
+            "$ref": "#/components/schemas/inventoryPartition"
+          }
+        },
+        "additionalProperties": false
+      },
+      "inventoryPartition": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "loginRequestInput": {
         "type": "object",
         "properties": {
@@ -363,6 +635,28 @@
           "folderID": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "userAccounts": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

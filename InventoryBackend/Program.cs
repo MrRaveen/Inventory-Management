@@ -43,6 +43,13 @@ builder.Services.AddSingleton<removeInventory>(obj =>
     var configObj = obj.GetRequiredService<IConfiguration>();
     return new removeInventory(client, configObj);
 });
+//register getInventory service
+builder.Services.AddSingleton<getInventoryFolderID>(obj =>
+{
+    var client = obj.GetRequiredService<CosmosClient>();
+    var configObj = obj.GetRequiredService<IConfiguration>();
+    return new getInventoryFolderID(client, configObj);
+});
 /*
  builder.Services.AddDbContext<userAccountContext>
  --Registers AppDbContext with dependency injection (DI) in the application.
@@ -55,8 +62,6 @@ builder.Services.AddSingleton<removeInventory>(obj =>
  builder.Configuration.GetConnectionString("AzureSqlConnection"))
   --Retrieves the connection string named "AzureSqlConnection" from the appsettings.json file.
  */
-
-
 
 builder.Services.AddSingleton<tokenProvider>();
 // Add services to the container.
