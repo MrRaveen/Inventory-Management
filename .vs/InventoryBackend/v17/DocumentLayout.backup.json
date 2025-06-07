@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\controllers\\accesspoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\controllers\\accesspoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\service\\getfolderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|d:\\work\\college_works\\other\\inventorymanagement\\inventorybackend\\inventorybackend\\controllers\\accesspoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6927B6A-1D62-4663-854F-DCB9CD6574F9}|InventoryBackend\\InventoryBackend.csproj|solutionrelative:inventorybackend\\controllers\\accesspoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "InventoryBackend\\appsettings.json",
+              "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\appsettings.json",
+              "RelativeToolTip": "InventoryBackend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-06T01:04:59.975Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -36,7 +53,7 @@
               "RelativeDocumentMoniker": "InventoryBackend\\Service\\getFolderService.cs",
               "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Service\\getFolderService.cs",
               "RelativeToolTip": "InventoryBackend\\Service\\getFolderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T13:19:54.225Z",
               "EditorCaption": ""
@@ -49,23 +66,21 @@
               "RelativeDocumentMoniker": "InventoryBackend\\Program.cs",
               "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Program.cs",
               "RelativeToolTip": "InventoryBackend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:53:33.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T12:53:33.611Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AccessPoint.cs",
               "DocumentMoniker": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Controllers\\AccessPoint.cs",
               "RelativeDocumentMoniker": "InventoryBackend\\Controllers\\AccessPoint.cs",
               "ToolTip": "D:\\Work\\College_works\\Other\\InventoryManagement\\InventoryBackend\\InventoryBackend\\Controllers\\AccessPoint.cs",
               "RelativeToolTip": "InventoryBackend\\Controllers\\AccessPoint.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAmwKYAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowDYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T15:18:45.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T15:18:45.687Z"
             }
           ]
         }
