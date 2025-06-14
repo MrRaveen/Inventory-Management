@@ -34,9 +34,9 @@ namespace InventoryBackend.Controllers
         }
 
         [HttpPost("/logIn")]
-        public async Task<string> logInProcess(loginRequestInput inputValue)
+        public async Task<logInOutputResponse> logInProcess(loginRequestInput inputValue)
         {
-            string result = "";
+            logInOutputResponse result = null;
             for(int count = 0;count < 4; count++)
             {
                 try
@@ -45,10 +45,10 @@ namespace InventoryBackend.Controllers
                     credentials.userName = inputValue.UserName;
                     credentials.password = inputValue.Password;
                     logInService service1 = new logInService(_userAccountContext, provider);
-                    string v = await service1.IsLoggedIn(credentials);
-                    if (v == "false")
+                    logInOutputResponse v = await service1.IsLoggedIn(credentials);
+                    if (v == null)
                     {
-                        result = "Invalid username or password";
+                        result = null;
                     }
                     else
                     {
@@ -60,7 +60,7 @@ namespace InventoryBackend.Controllers
                 {
                     Console.WriteLine("Error occured in the controller : " + ex.ToString());
                     //throw new Exception("Error occured in the controller : " + ex.ToString());
-                    result = ex.ToString();
+                    //result = ex.ToString();
                 }
             }
             return result;

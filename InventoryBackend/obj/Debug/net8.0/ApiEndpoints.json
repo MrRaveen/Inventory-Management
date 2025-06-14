@@ -145,7 +145,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "InventoryBackend.Contract.Inventory.logInOutputResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",

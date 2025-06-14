@@ -1,4 +1,5 @@
 ﻿using InventoryBackend.Context;
+using InventoryBackend.Contract.Inventory;
 using InventoryBackend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ namespace InventoryBackend.Service
 {
     public class logInService(userAccountContext _userAccountContext, tokenProvider provider)
     {
-        public async Task<string> IsLoggedIn(userAccounts passingCredentials)
+        public async Task<logInOutputResponse> IsLoggedIn(userAccounts passingCredentials)
         {
             //async Task<ActionResult<IEnumerable<userAccounts>>>
             //await _userAccountContext.userAccounts.ToListAsync()
@@ -19,7 +20,7 @@ namespace InventoryBackend.Service
                 List<userAccounts> result = await _userAccountContext.userAccounts.Where(p => p.userName == passingCredentials.userName).ToListAsync();
                 if (result.IsNullOrEmpty())
                 {
-                    return "false";
+                    return null;
                 }
                 else
                 {
@@ -29,14 +30,18 @@ namespace InventoryBackend.Service
                         {
                             string token = provider.Create(item);
                             Debug.WriteLine(token);//HACK TEST
-                            return token;
+                            logInOutputResponse response1 = new logInOutputResponse();
+                            response1.token = token;
+                            response1.userID = item.userID;
+                            Debug.WriteLine(response1.ToString());
+                            return response1;
                         }
                         else
                         {
-                            return "false";
+                            return null;
                         }
                     }
-                    return "false";
+                    return null;
                 }
             }catch (Exception ex)
             {

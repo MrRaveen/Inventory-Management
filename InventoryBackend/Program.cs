@@ -1,10 +1,12 @@
 using InventoryBackend.Context;
 using InventoryBackend.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Server.Kestrel.Https;
 using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -62,6 +64,18 @@ builder.Services.AddSingleton<getInventoryFolderID>(obj =>
  builder.Configuration.GetConnectionString("AzureSqlConnection"))
   --Retrieves the connection string named "AzureSqlConnection" from the appsettings.json file.
  */
+
+//test --> use the certificate
+var httpsConnectionAdapterOptions = new HttpsConnectionAdapterOptions
+{
+    SslProtocols = System.Security.Authentication.SslProtocols.Tls12,
+    ClientCertificateMode = ClientCertificateMode.AllowCertificate,
+    ServerCertificate = new X509Certificate2("./inventorymanagement2.pfx", "123456")
+};
+builder.WebHost.ConfigureKestrel(options =>
+    options.ConfigureEndpointDefaults(listenOptions =>
+        listenOptions.UseHttps(httpsConnectionAdapterOptions)));
+
 
 builder.Services.AddSingleton<tokenProvider>();
 // Add services to the container.

@@ -21,12 +21,6 @@ D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBacken
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets.build.json
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets.development.json
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets\msbuild.InventoryBackend.Microsoft.AspNetCore.StaticWebAssets.props
-D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets\msbuild.InventoryBackend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets\msbuild.build.InventoryBackend.props
-D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.InventoryBackend.props
-D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.InventoryBackend.props
-D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets.pack.json
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\Inventor.3DD3A99C.Up2Date
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\InventoryBackend.dll
@@ -195,3 +189,8 @@ D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBacken
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\bin\Debug\net8.0\runtimes\win-x64\native\msvcp140.dll
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\bin\Debug\net8.0\runtimes\win-x64\native\vcruntime140.dll
 D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\bin\Debug\net8.0\runtimes\win-x64\native\vcruntime140_1.dll
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Work\College_works\Other\InventoryManagement\InventoryBackend\InventoryBackend\obj\Debug\net8.0\staticwebassets.build.json.cache
